@@ -11,3 +11,20 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+export PATH=$HOME/.local/bin:$PATH
+export GOPATH=$HOME/foss/go
+
+alias remotenb="ssh -N -f -L 8666:localhost:8666 work"
+alias killremotenb="kill $(ps ax | grep '[8]666:localhost' | awk '{print $1}')"
+alias listssh="ps ax |  grep ssh | grep -v grep"
+alias startnb="jupyter notebook --no-browser --port=8666"
+alias notebook="jupyter notebook"
+
+alias open='xdg-open'
+
+alias test_internet='ping -c5 8.8.8.8 -W 1'
+
+alias tma='tmux attach'
+alias tmn='tmux new'
+alias tml='tmux list-sessions'
